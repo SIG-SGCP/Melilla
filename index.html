@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_6a296519dbba28360a2754906724e3ac {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://unpkg.com/leaflet.featuregroup.subgroup@1.0.2/dist/leaflet.featuregroup.subgroup.js"></script>
+    
+                    <style>
+                        .foliumtooltip {
+                            
+        background-color: #FAFAC8;
+        opacity: 0.3;
+        border: 1px solid black;
+        border-radius: 3px;
+        box-shadow: 3px;
+    
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    
+                    <style>
+                        .foliumpopup {
+                            margin: auto;
+                        }
+                       .foliumpopup table{
+                            margin: auto;
+                        }
+                        .foliumpopup tr{
+                            text-align: left;
+                        }
+                        .foliumpopup th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css"/>
+    <script src="https://cdn.jsdelivr.net/gh/ardhi/Leaflet.MousePosition/src/L.Control.MousePosition.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ardhi/Leaflet.MousePosition/src/L.Control.MousePosition.min.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_6a296519dbba28360a2754906724e3ac" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_6a296519dbba28360a2754906724e3ac = L.map(
+                "map_6a296519dbba28360a2754906724e3ac",
+                {
+                    center: [35.29215, -2.93352],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 14,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_6a296519dbba28360a2754906724e3ac);
+
+            
+
+        
+    
+            var tile_layer_47ff0d47b4f51c2c39862499917ea3f6 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_47ff0d47b4f51c2c39862499917ea3f6.addTo(map_6a296519dbba28360a2754906724e3ac);
+        
+    
+            var feature_group_17df80616705f6278c9cf83d5a4c7dc3 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            feature_group_17df80616705f6278c9cf83d5a4c7dc3.addTo(map_6a296519dbba28360a2754906724e3ac);
+        
+    
+            var feature_group_sub_group_c9d6d32ccda22b77fff387af9b0921d7 = L.featureGroup.subGroup(
+                feature_group_17df80616705f6278c9cf83d5a4c7dc3
+            );
+        
+    
+        function geo_json_b8e064ff88c01876e1624cd4e705a577_styler(feature) {
+            switch(feature.properties.OBJECTID) {
+                default:
+                    return {"color": "red", "fillColor": "#ff0000", "weight": 1.2};
+            }
+        }
+
+        function geo_json_b8e064ff88c01876e1624cd4e705a577_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_b8e064ff88c01876e1624cd4e705a577 = L.geoJson(null, {
+                onEachFeature: geo_json_b8e064ff88c01876e1624cd4e705a577_onEachFeature,
+            
+                style: geo_json_b8e064ff88c01876e1624cd4e705a577_styler,
+            ...{
+}
+        });
+
+        function geo_json_b8e064ff88c01876e1624cd4e705a577_add (data) {
+            geo_json_b8e064ff88c01876e1624cd4e705a577
+                .addData(data);
+        }
+            geo_json_b8e064ff88c01876e1624cd4e705a577_add({"crs": {"properties": {"name": "urn:ogc:def:crs:EPSG::4258"}, "type": "name"}, "features": [{"geometry": {"coordinates": [[[[-2.940307899999937, 35.29484], [-2.940456099999949, 35.29491960000007], [-2.940474799999947, 35.29495460000004], [-2.940476798999953, 35.29498670000004], [-2.940458699999965, 35.29501370000003], [-2.94036959999994, 35.29513110000005], [-2.939321499999949, 35.295226], [-2.939136399999938, 35.295215100000064], [-2.939176599999939, 35.29500710000008], [-2.939104199999974, 35.294976500000075], [-2.939144399999975, 35.29493240000005], [-2.93918089999994, 35.29489230000007], [-2.939235399999973, 35.29483250000004], [-2.939318399999934, 35.294741300000055], [-2.939334199999962, 35.294724], [-2.939369099999965, 35.294708600000035], [-2.939409299999966, 35.29469990000007], [-2.939433599999973, 35.29469990000007], [-2.939452199999948, 35.29469990000007], [-2.939505899999972, 35.294704300000035], [-2.939554198999929, 35.294724], [-2.939595099999963, 35.29474220000003], [-2.939623899999958, 35.29476120000004], [-2.939644098999963, 35.29478470000004], [-2.939693599999941, 35.29484220000006], [-2.939835799999969, 35.29482680000007], [-2.939847199999974, 35.29488230000004], [-2.940116599999953, 35.29485760000006], [-2.940307899999937, 35.29484]]]], "type": "MultiPolygon"}, "properties": {"Direccion": "PZA .MARIA ASTIGARRAGA S/N (B.ATAQUE SECO)", "EMAIL": "ceip.espana@educacion.gob.es", "ID": "M03", "LE1": "101", "LE2": "230 260", "LE3": "550 551", "LE4": null, "LE5": "", "NOMBRE": "CEIP ESPA\u00d1A", "OBJECTID": 1, "Shape_Area": 4.683545660056427e-07, "Shape_Length": 0.0033664422000274164, "Telefono": 952683994.0}, "type": "Feature"}, {"geometry": {"coordinates": [[[[-2.95537660399998, 35.295967046000044], [-2.95510279399997, 35.29645363800006], [-2.95498641599994, 35.29641065100003], [-2.955053446999955, 35.29623174500006], [-2.954427866999936, 35.296095523000076], [-2.954363804999957, 35.296171843000025], [-2.954154329999938, 35.29608826200007], [-2.954003056999966, 35.29600470400004], [-2.954040941999949, 35.29590690200007], [-2.954174786999943, 35.29593319700007], [-2.954337775999932, 35.29588315700005], [-2.954375660999972, 35.29578535600007], [-2.95443686699997, 35.295615990000044], [-2.954643439999927, 35.29568048300007], [-2.954757030999929, 35.295499208000024], [-2.955004328999962, 35.295592345000045], [-2.954925668999977, 35.295756933000064], [-2.955027493999978, 35.29580230000005], [-2.954998351999961, 35.29587863300003], [-2.955266019999954, 35.29597416300004], [-2.95529223799997, 35.29592168500005], [-2.95537660399998, 35.295967046000044]]]], "type": "MultiPolygon"}, "properties": {"Direccion": "CTRA.DE HIDUM S/N", "EMAIL": "leonsola@gmail.com", "ID": "M05", "LE1": "105", "LE2": "213 230 233 261 ", "LE3": "305", "LE4": "401", "LE5": "550 580", "NOMBRE": "CEIP LE\u00d3N SOL\u00c1 ", "OBJECTID": 2, "Shape_Area": 5.330431604213412e-07, "Shape_Length": 0.004217280089218311, "Telefono": 952683903.0}, "type": "Feature"}, {"geometry": {"coordinates": [[[[-2.949327599999947, 35.27218810000005], [-2.949504599999955, 35.27251430000007], [-2.949392, 35.27257780000008], [-2.949351699999966, 35.27261510000005], [-2.949319399999979, 35.27266380000003], [-2.949300799999946, 35.27272020000004], [-2.949308799999926, 35.27277710000004], [-2.949335699999949, 35.27284940000004], [-2.949198899999942, 35.27301360000007], [-2.948557699999981, 35.27267040000004], [-2.948437, 35.27239440000005], [-2.949284699999964, 35.272131100000024], [-2.949327599999947, 35.27218810000005]]]], "type": "MultiPolygon"}, "properties": {"Direccion": "CTRA. DE HARDU, N\u00ba 5", "EMAIL": "ceip.pde@educacion.gob.es", "ID": "M14", "LE1": "230 231 232 233", "LE2": "580", "LE3": null, "LE4": null, "LE5": "", "NOMBRE": "CEIP PEDRO DE ESTOPI\u00d1\u00c1N", "OBJECTID": 3, "Shape_Area": 5.310198400023145e-07, "Shape_Length": 0.00300895695025565, "Telefono": 952674919.0}, "type": "Feature"}, {"geometry": {"coordinates": [[[[-2.947920299999964, 35.278881900000044], [-2.947804599999927, 35.27868390000003], [-2.947796299999936, 35.278668], [-2.94781, 35.27865010000005], [-2.947819899999956, 35.27863060000004], [-2.947827199999949, 35.278589], [-2.948136099999942, 35.27846750000003], [-2.948302199999944, 35.27840470000007], [-2.949075, 35.278108100000054], [-2.949424799999974, 35.27871680000004], [-2.949274199999934, 35.27877270000005], [-2.949238499999979, 35.27878890000005], [-2.949010699999974, 35.27887730000003], [-2.948784899999964, 35.27896590000006], [-2.948734299999956, 35.27898510000006], [-2.948378399999967, 35.279124], [-2.948352299999954, 35.27913180000007], [-2.948117899999943, 35.27922490000003], [-2.947932599999945, 35.27890320000006], [-2.947920299999964, 35.278881900000044]]]], "type": "MultiPolygon"}, "properties": {"Direccion": "CALLE ESCULTOR MUSTAF\u00c1 ARRUF, 8", "EMAIL": "correo@colegioenriquesoler.com", "ID": "M18", "LE1": "230", "LE2": "308", "LE3": "580", "LE4": null, "LE5": "", "NOMBRE": "CC ENRIQUE SOLER", "OBJECTID": 4, "Shape_Area": 9.747146350007634e-07, "Shape_Length": 0.004171452896167729, "Telefono": 952670287.0}, "type": "Feature"}, {"geometry": {"coordinates": [[[[-2.952078599999936, 35.28581770000005], [-2.951971499999956, 35.28614120000003], [-2.95184839999996, 35.28651260000004], [-2.951793099999975, 35.286677300000065], [-2.950624199999936, 35.28641380000005], [-2.95090829999998, 35.285556400000075], [-2.952078599999936, 35.28581770000005]]]], "type": "MultiPolygon"}, "properties": {"Direccion": "AV.DE LA JUVENTUD, 4", "EMAIL": "ies.enriquenieto@educacion.gob.es", "ID": "M07", "LE1": "101", "LE2": "204 230 260", "LE3": "301 305", "LE4": "410", "LE5": "501 551 580", "NOMBRE": "IES ENRIQUE NIETO", "OBJECTID": 5, "Shape_Area": 1.0791130899836372e-06, "Shape_Length": 0.004206363741402862, "Telefono": 630683268.0}, "type": "Feature"}, {"geometry": {"coordinates": [[[[-2.939336099999935, 35.27748660000003], [-2.939356299999929, 35.27752460000005], [-2.93940189999995, 35.27761050000004], [-2.939422600999933, 35.277629], [-2.939435699999933, 35.27765260000007], [-2.93950719999998, 35.27779060000006], [-2.939038599999947, 35.27795770000006], [-2.938932, 35.27800180000003], [-2.938921, 35.27800460000003], [-2.938619499999959, 35.277515900000026], [-2.938675, 35.27749780000005], [-2.938769899999954, 35.27746060000004], [-2.939048000999946, 35.27736210000006], [-2.939148499999931, 35.27755350000007], [-2.939336099999935, 35.27748660000003]]]], "type": "MultiPolygon"}, "properties": {"Direccion": "GRAL. ASTILLEROS, S/N", "EMAIL": "ies.miguelfernandez@educacion.gob.es", "ID": "M12", "LE1": "208 230 260", "LE2": "301 305", "LE3": "550", "LE4": null, "LE5": "", "NOMBRE": "IES MIGUEL FERN\u00c1NDEZ", "OBJECTID": 6, "Shape_Area": 3.138346074976559e-07, "Shape_Length": 0.0024195909596189105, "Telefono": 952672517.0}, "type": "Feature"}, {"geometry": {"coordinates": [[[[-2.94675529999995, 35.29010290000008], [-2.945829899999978, 35.290212300000064], [-2.94575709999998, 35.289802500000064], [-2.945238199999949, 35.289856400000076], [-2.945217, 35.28980350000006], [-2.945151899999928, 35.28974270000003], [-2.945102199999951, 35.28935880000006], [-2.945064, 35.28904380000006], [-2.945061899999928, 35.28898740000005], [-2.945058599999925, 35.28894810000003], [-2.945031898999957, 35.28890320000005], [-2.945003699999972, 35.288857300000075], [-2.945462499999962, 35.288693], [-2.94675529999995, 35.29010290000008]]]], "type": "MultiPolygon"}, "properties": {"Direccion": "PZA.DE PRIMERO DE MAYO 2", "EMAIL": "instituto@iesleopoldoqueipo.com", "ID": "M04", "LE1": "202 206 230 233 260", "LE2": "410", "LE3": "580", "LE4": "", "LE5": "", "NOMBRE": "IES LEOPOLDO QUEIPO ", "OBJECTID": 7, "Shape_Area": 1.2612247553833487e-06, "Shape_Length": 0.005322439085110399, "Telefono": 952673810.0}, "type": "Feature"}, {"geometry": {"coordinates": [[[[-2.952645399999938, 35.285956300000066], [-2.952620699999954, 35.28601370000007], [-2.952972599999953, 35.286103], [-2.953189799999961, 35.286041700000055], [-2.953361499999971, 35.28638110000003], [-2.953361199999961, 35.28641090000008], [-2.953342699999951, 35.286431400000026], [-2.952747, 35.28690130000007], [-2.951793099999975, 35.286677300000065], [-2.95184839999996, 35.28651260000004], [-2.951971499999956, 35.28614120000003], [-2.952078599999936, 35.28581770000005], [-2.952645399999938, 35.285956300000066]]]], "type": "MultiPolygon"}, "properties": {"Direccion": "CTRA. ALFONSO XIII S/N, -PRIM. ABRIL", "EMAIL": "ceip.pintormorillas@educacion.gob.es", "ID": "M10", "LE1": "101", "LE2": "230 260", "LE3": "402", "LE4": "502", "LE5": "", "NOMBRE": "CEIP PINTOR EDUARDO MORILLAS", "OBJECTID": 8, "Shape_Area": 1.0779595550104103e-06, "Shape_Length": 0.0043168474705982725, "Telefono": 952675934.0}, "type": "Feature"}, {"geometry": {"coordinates": [[[[-2.952728499999978, 35.28510240000003], [-2.953189799999961, 35.286041700000055], [-2.952972599999953, 35.286103], [-2.952620699999954, 35.28601370000007], [-2.952645399999938, 35.285956300000066], [-2.952078599999936, 35.28581770000005], [-2.95090829999998, 35.285556400000075], [-2.95106549999997, 35.285122200000046], [-2.951089699999955, 35.28510030000007], [-2.951135299999976, 35.28509370000006], [-2.951183499999956, 35.28510240000003], [-2.951483998999947, 35.285227200000065], [-2.951561699999957, 35.285262300000056], [-2.951642199999981, 35.285286400000075], [-2.951714599999946, 35.285299500000065], [-2.951797799999952, 35.28531040000007], [-2.951878199999953, 35.28531480000004], [-2.951961400999949, 35.28531040000007], [-2.952060599999925, 35.28530390000003], [-2.952167899999949, 35.28527980000007], [-2.952728499999978, 35.28510240000003]]]], "type": "MultiPolygon"}, "properties": {"Direccion": "CTRA. ALFONSO XIII, S/N", "EMAIL": "ceip.anselmopardo@educacion.gob.es", "ID": "M13", "LE1": "208 230", "LE2": "407", "LE3": "550 551", "LE4": "", "LE5": "", "NOMBRE": "CEIP ANSELMO PARDO ", "OBJECTID": 9, "Shape_Area": 1.2014954546218652e-06, "Shape_Length": 0.0056831615764893805, "Telefono": 695917502.0}, "type": "Feature"}, {"geometry": {"coordinates": [[[[-2.941547232999937, 35.28609759900007], [-2.941484232999926, 35.286197198000025], [-2.941284332999942, 35.28612859800006], [-2.941299132999973, 35.28605379800007], [-2.941324932999976, 35.28582079900008], [-2.941404631999944, 35.285102798000025], [-2.941425032999973, 35.28491899900007], [-2.94145433999995, 35.28478179100006], [-2.941591240999969, 35.28474519100007], [-2.941575932999967, 35.284914799000035], [-2.941602232999969, 35.28501219900005], [-2.941615632999969, 35.28506199800006], [-2.941612432999932, 35.28512519800006], [-2.941609532999962, 35.28518219800003], [-2.941607032999968, 35.285230098000056], [-2.941601132999949, 35.28534609800005], [-2.941592732999936, 35.28551189800004], [-2.941547232999937, 35.28609759900007]]]], "type": "MultiPolygon"}, "properties": {"Direccion": "COMANDANTE GARC\u00cdA MORATO, 2", "EMAIL": "ceip.reyescatolicos@educacion.gob.es", "ID": "M09", "LE1": "205 208 230", "LE2": "305", "LE3": "551 580", "LE4": "551 580", "LE5": "", "NOMBRE": "CEIP REYES CAT\u00d3LICOS ", "OBJECTID": 10, "Shape_Area": 3.0519340318068304e-07, "Shape_Length": 0.003189922651347878, "Telefono": 952674299.0}, "type": "Feature"}, {"geometry": {"coordinates": [[[[-2.944598699999972, 35.288588], [-2.94455929999998, 35.28857190000008], [-2.943656799999928, 35.288202700000056], [-2.943810199999973, 35.287946], [-2.943868899999927, 35.28785650000003], [-2.943951799999979, 35.28771770000003], [-2.943983099999969, 35.287735], [-2.944701399999929, 35.288132], [-2.944845, 35.28821140000008], [-2.944791599999974, 35.288291800000025], [-2.944598699999972, 35.288588]]]], "type": "MultiPolygon"}, "properties": {"Direccion": "M\u00daSICO GRANADOS 2", "EMAIL": "ceip.velazquez@educacion.gob.es", "ID": "M06", "LE1": "103", "LE2": "230", "LE3": "501", "LE4": null, "LE5": "", "NOMBRE": "CEIP VEL\u00c1ZQUEZ ", "OBJECTID": 11, "Shape_Area": 5.143972500065605e-07, "Shape_Length": 0.0030559618856036063, "Telefono": 952674502.0}, "type": "Feature"}, {"geometry": {"coordinates": [[[[-2.942539899999929, 35.27512520000005], [-2.942880099999968, 35.27500420000007], [-2.943228399999953, 35.27566360000003], [-2.942886, 35.27578690000007], [-2.942539899999929, 35.27512520000005]]], [[[-2.943004, 35.275963700000034], [-2.943312699999979, 35.27585450000004], [-2.943442199999936, 35.27610690000006], [-2.94357, 35.276355900000055], [-2.943264099999965, 35.27646280000005], [-2.943134399999963, 35.27621380000005], [-2.943004, 35.275963700000034]]]], "type": "MultiPolygon"}, "properties": {"Direccion": "CORONEL CEBOLLINO, N\u00ba 8", "EMAIL": "ceip.real@educacion.gob.es", "ID": "M08", "LE1": "102", "LE2": "203 209 230 260", "LE3": "305", "LE4": "550 551", "LE5": "", "NOMBRE": "CEIP REAL", "OBJECTID": 12, "Shape_Area": 4.4951413001616346e-07, "Shape_Length": 0.003995343313530904, "Telefono": 647512334.0}, "type": "Feature"}, {"geometry": {"coordinates": [[[[-2.952399199999945, 35.29679660000005], [-2.952364299999942, 35.29701550000004], [-2.951959299999942, 35.29740510000005], [-2.951884, 35.29735590000007], [-2.951724799999965, 35.29724070000003], [-2.951597199999981, 35.29716210000004], [-2.951468399999953, 35.296969500000046], [-2.95139329999995, 35.29691260000004], [-2.951304799999946, 35.29697170000003], [-2.951079399999969, 35.29663020000004], [-2.951087299999926, 35.29661370000008], [-2.951202899999942, 35.29652950000008], [-2.951798699999927, 35.29654290000008], [-2.951831799999979, 35.29655530000008], [-2.951902399999938, 35.29661120000003], [-2.95198739999995, 35.29665220000004], [-2.952120499999978, 35.296727], [-2.952149299999974, 35.29674030000007], [-2.952193, 35.29674980000004], [-2.952261499999963, 35.29676540000003], [-2.952399199999945, 35.29679660000005]]]], "type": "MultiPolygon"}, "properties": {"Direccion": "C/ PEDRO DE MENDOZA, N\u00ba 27", "EMAIL": "sergio.balbuena@edumelilla.es", "ID": "M11", "LE1": "102", "LE2": "208 230 233", "LE3": "301", "LE4": "402", "LE5": "550 551 580", "NOMBRE": "CEIP JUAN CARO ROMERO", "OBJECTID": 13, "Shape_Area": 6.49176244966021e-07, "Shape_Length": 0.0034790712329575693, "Telefono": 952684169.0}, "type": "Feature"}, {"geometry": {"coordinates": [[[[-2.948630269999967, 35.29337087000005], [-2.948218082999972, 35.29359590900003], [-2.948166852999975, 35.29361879000004], [-2.94810635999994, 35.29356532300005], [-2.947468218999973, 35.29400784400008], [-2.947263493999969, 35.29379971700007], [-2.947345029999951, 35.29371004800004], [-2.948355739999954, 35.293109274000074], [-2.948472124999967, 35.293128410000065], [-2.948679176999974, 35.293340353000076], [-2.948630269999967, 35.29337087000005]]]], "type": "MultiPolygon"}, "properties": {"Direccion": "CALLE GENERAL CASTA\u00d1OS", "EMAIL": "ceip.encarnaleon@educacion.gob.es", "ID": "M01", "LE1": "102", "LE2": "230 233 260", "LE3": "305 306", "LE4": "402", "LE5": "501 550 551", "NOMBRE": "CEIP ENCARNA LE\u00d3N", "OBJECTID": 14, "Shape_Area": 4.325870390077338e-07, "Shape_Length": 0.0034438306874264063, "Telefono": 951485290.0}, "type": "Feature"}, {"geometry": {"coordinates": [[[[-2.957066238999971, 35.287758428000075], [-2.956428793999976, 35.28816139300005], [-2.956361901999969, 35.28810172500005], [-2.955401937999966, 35.28765046700005], [-2.955407788999935, 35.28759321100006], [-2.955684430999952, 35.28719012000005], [-2.955893943999968, 35.28716395300006], [-2.955914359999952, 35.28707568800007], [-2.955937691999964, 35.28697310900003], [-2.955841733999932, 35.28686094400007], [-2.955833311999925, 35.28629551600005], [-2.955859554999961, 35.286192938000056], [-2.955941099999961, 35.28605459400006], [-2.956136088999926, 35.28597593500007], [-2.956386050999924, 35.28647703400003], [-2.956368538999925, 35.286577230000034], [-2.956272437999928, 35.28672988400007], [-2.956222890999925, 35.286882554000044], [-2.956208249999975, 35.28705432300006], [-2.956240202999936, 35.28715453600006], [-2.956330357999946, 35.28724045600006], [-2.956603780999956, 35.287405172000035], [-2.956993553999951, 35.287648657000034], [-2.957104080999954, 35.28772742700005], [-2.957066238999971, 35.287758428000075]]]], "type": "MultiPolygon"}, "properties": {"Direccion": "C/MAAN\u00c1N BENAISA MIMUN", "EMAIL": "ies.virgenvictoria@educacion.gob.es", "ID": "M02", "LE1": "101 102", "LE2": "203 230 260", "LE3": "402", "LE4": "501 502 550 551 ", "LE5": "", "NOMBRE": "IES VIRGEN DE LA VICTORIA", "OBJECTID": 15, "Shape_Area": 1.4272857399954947e-06, "Shape_Length": 0.00641584355154379, "Telefono": 952670647.0}, "type": "Feature"}, {"geometry": {"coordinates": [[[[-2.947499708999942, 35.29827654400003], [-2.94710983899995, 35.29814993000008], [-2.947240946999955, 35.297913797000035], [-2.947636628999931, 35.29805234200006], [-2.947499708999942, 35.29827654400003]]]], "type": "MultiPolygon"}, "properties": {"Direccion": "GARC\u00cdA CABRELLES, S/N", "EMAIL": "ceip.mediterraneo@educacion.gob.es", "ID": "M15", "LE1": "209 230", "LE2": "580", "LE3": null, "LE4": null, "LE5": "", "NOMBRE": "CEIP MEDITERR\u00c1NEO", "OBJECTID": 16, "Shape_Area": 1.0817177909027482e-07, "Shape_Length": 0.0013619439538020053, "Telefono": 952682245.0}, "type": "Feature"}, {"geometry": {"coordinates": [[[[-2.947972720999928, 35.27939966300005], [-2.946785344999967, 35.279907312000034], [-2.946336346999942, 35.279134129000056], [-2.947414555999956, 35.27871232200005], [-2.947584731999939, 35.27874818300006], [-2.947702546999949, 35.27877328400007], [-2.947985848999963, 35.27934241000003], [-2.947972720999928, 35.27939966300005]]]], "type": "MultiPolygon"}, "properties": {"Direccion": "C/ ESCULTOR MUSTAF\u00c1 ARRUF, 6 (HUERTA SALAMA)", "EMAIL": "ies.jafernandez@educacion.gob.es", "ID": "M16", "LE1": "101 102", "LE2": "203 230 260", "LE3": "301 305 307", "LE4": "502 551", "LE5": "", "NOMBRE": "IES JUAN ANTONIO FERN\u00c1NDEZ P\u00c9REZ", "OBJECTID": 17, "Shape_Area": 1.155093323348631e-06, "Shape_Length": 0.004332073287599414, "Telefono": 952679216.0}, "type": "Feature"}, {"geometry": {"coordinates": [[[[-2.935611390999952, 35.27740722800007], [-2.935453373999962, 35.277088407000065], [-2.935872377999942, 35.27701419400006], [-2.936018822999927, 35.277249030000064], [-2.935611390999952, 35.27740722800007]]]], "type": "MultiPolygon"}, "properties": {"Direccion": "C/ CABO CA\u00d1\u00d3N ANTONIO MESA, S/N.", "EMAIL": "ceip.hipodromo@educacion.gob.es", "ID": "M17", "LE1": "103", "LE2": "230 232 260", "LE3": "301", "LE4": "402a", "LE5": "550", "NOMBRE": "CEIP HIP\u00d3DROMO", "OBJECTID": 18, "Shape_Area": 1.3208059857910833e-07, "Shape_Length": 0.0014951803958449662, "Telefono": 615917231.0}, "type": "Feature"}], "name": "colesMelillaLatLong", "type": "FeatureCollection"});
+
+        
+    
+    geo_json_b8e064ff88c01876e1624cd4e705a577.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature => {
+        if (feature === null) {
+            return '';
+        } else if (typeof(feature)=='object') {
+            return JSON.stringify(feature);
+        } else {
+            return feature;
+        }
+    }
+    let fields = ["NOMBRE"];
+    let aliases = ["Centro:"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i].toLocaleString()}</th>
+            
+            <td>${handleObject(layer.feature.properties[v]).toLocaleString()}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{
+  "maxWidth": 800,
+  "sticky": false,
+  "className": "foliumtooltip",
+});
+                     
+    
+    geo_json_b8e064ff88c01876e1624cd4e705a577.bindPopup(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature => {
+        if (feature === null) {
+            return '';
+        } else if (typeof(feature)=='object') {
+            return JSON.stringify(feature);
+        } else {
+            return feature;
+        }
+    }
+    let fields = ["NOMBRE", "Direccion", "Telefono", "EMAIL", "LE1", "LE2", "LE3", "LE4", "LE5"];
+    let aliases = ["Nombre:", "Direcci\u00f3n:", "Tel\u00e9fono", "Correo:", "Actividades Palanca:", "", "", "", ""];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i].toLocaleString()}</th>
+            
+            <td>${handleObject(layer.feature.properties[v]).toLocaleString()}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{
+  "className": "foliumpopup",
+});
+                     
+    
+            geo_json_b8e064ff88c01876e1624cd4e705a577.addTo(feature_group_sub_group_c9d6d32ccda22b77fff387af9b0921d7);
+        
+    
+            feature_group_sub_group_c9d6d32ccda22b77fff387af9b0921d7.addTo(map_6a296519dbba28360a2754906724e3ac);
+        
+    
+            var geo_json_b8e064ff88c01876e1624cd4e705a577searchControl = new L.Control.Search({
+                layer: geo_json_b8e064ff88c01876e1624cd4e705a577,
+                
+                propertyName: 'NOMBRE',
+                
+                collapsed: false,
+                textPlaceholder: 'Nombre del Centro',
+                position:'topleft',
+            
+                marker: false,
+                moveToLocation: function(latlng, title, map) {
+                var zoom =  map.getBoundsZoom(latlng.layer.getBounds()) 
+                    map.flyTo(latlng, zoom); // access the zoom
+                }
+            
+                });
+                geo_json_b8e064ff88c01876e1624cd4e705a577searchControl.on('search:locationfound', function(e) {
+                    geo_json_b8e064ff88c01876e1624cd4e705a577.setStyle(function(feature){
+                        return feature.properties.style
+                    })
+                    
+                    e.layer.setStyle({
+  "weight": 3,
+});
+                    
+                    if(e.layer._popup)
+                        e.layer.openPopup();
+                })
+                geo_json_b8e064ff88c01876e1624cd4e705a577searchControl.on('search:collapsed', function(e) {
+                        geo_json_b8e064ff88c01876e1624cd4e705a577.setStyle(function(feature){
+                            return feature.properties.style
+                    });
+                });
+            map_6a296519dbba28360a2754906724e3ac.addControl( geo_json_b8e064ff88c01876e1624cd4e705a577searchControl );
+
+        
+    
+            var mouse_position_f629775252e6e9bc2b6905d292882848 = new L.Control.MousePosition(
+                {
+  "position": "bottomright",
+  "separator": " : ",
+  "emptyString": "Unavailable",
+  "lngFirst": false,
+  "numDigits": 5,
+  "prefix": "",
+}
+            );
+            mouse_position_f629775252e6e9bc2b6905d292882848.options["latFormatter"] =
+                undefined;
+            mouse_position_f629775252e6e9bc2b6905d292882848.options["lngFormatter"] =
+                undefined;
+            map_6a296519dbba28360a2754906724e3ac.addControl(mouse_position_f629775252e6e9bc2b6905d292882848);
+        
+    
+            var tile_layer_321bed027d2d5d83f4d5d406c7d29245 = L.tileLayer(
+                "http://mt0.google.com/vt/lyrs=s\u0026hl=en\u0026x={x}\u0026y={y}\u0026z={z}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": " ",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            var layer_control_976c3850e8a44385fa8e01e227f53cf2_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_47ff0d47b4f51c2c39862499917ea3f6,
+                    "Sat\u00e9lite" : tile_layer_321bed027d2d5d83f4d5d406c7d29245,
+                },
+                overlays :  {
+                    "Centros educativos" : feature_group_sub_group_c9d6d32ccda22b77fff387af9b0921d7,
+                },
+            };
+            let layer_control_976c3850e8a44385fa8e01e227f53cf2 = L.control.layers(
+                layer_control_976c3850e8a44385fa8e01e227f53cf2_layers.base_layers,
+                layer_control_976c3850e8a44385fa8e01e227f53cf2_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_6a296519dbba28360a2754906724e3ac);
+
+        
+</script>
+</html>
