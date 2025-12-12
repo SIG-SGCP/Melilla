@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_13cc323048da8365844a1a1b255aa31f {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://unpkg.com/leaflet.featuregroup.subgroup@1.0.2/dist/leaflet.featuregroup.subgroup.js"></script>
+    
+                    <style>
+                        .foliumtooltip {
+                            
+        background-color: #FAFAC8;
+        opacity: 0.3;
+        border: 1px solid black;
+        border-radius: 3px;
+        box-shadow: 3px;
+    
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    
+                    <style>
+                        .foliumpopup {
+                            margin: auto;
+                        }
+                       .foliumpopup table{
+                            margin: auto;
+                        }
+                        .foliumpopup tr{
+                            text-align: left;
+                        }
+                        .foliumpopup th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css"/>
+    <script src="https://cdn.jsdelivr.net/gh/ardhi/Leaflet.MousePosition/src/L.Control.MousePosition.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ardhi/Leaflet.MousePosition/src/L.Control.MousePosition.min.css"/>
+</head>
+<body>
+    
+    
+<script>
+window.onload = function() {
+    var map = map_13cc323048da8365844a1a1b255aa31f;
+
+    var btn = L.DomUtil.create('button');
+    btn.innerHTML = '🌍';
+   // btn.style.fontSize = '32px';
+    btn.title = 'Mapa completo';
+    btn.style.position = 'absolute';
+    btn.style.top = '122px';
+    btn.style.left = '10px';
+    btn.style.zIndex = 400;
+    btn.style.backgroundColor = 'white';
+    btn.style.border = '1,5px solid';
+    btn.style.borderColor = '#C9C9C9';
+    btn.style.boxShadow = 'none';
+    btn.style.padding = '9px';
+    btn.style.borderRadius = '5px';
+    btn.style.alignItems = 'center';
+    btn.style.justifyContent = 'center';
+    btn.style.cursor = 'pointer';
+
+    map.getContainer().appendChild(btn);
+
+    btn.onclick = function() {
+        map.setView([35.29215, -2.93352], 14);
+    };
+};
+</script>
+    
+            <div class="folium-map" id="map_13cc323048da8365844a1a1b255aa31f" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_13cc323048da8365844a1a1b255aa31f = L.map(
+                "map_13cc323048da8365844a1a1b255aa31f",
+                {
+                    center: [35.29215, -2.93352],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 14,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_13cc323048da8365844a1a1b255aa31f);
+
+            
+
+        
+    
+            var tile_layer_f5de8eb2be6a49800a3d4ab598cbf21a = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_f5de8eb2be6a49800a3d4ab598cbf21a.addTo(map_13cc323048da8365844a1a1b255aa31f);
+        
+    
+            var feature_group_8e709976ca1ee23b78c066d00ccaf822 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            feature_group_8e709976ca1ee23b78c066d00ccaf822.addTo(map_13cc323048da8365844a1a1b255aa31f);
+        
+    
+            var feature_group_sub_group_a1d1bc9b66449e9857194ce4ed14c1c8 = L.featureGroup.subGroup(
+                feature_group_8e709976ca1ee23b78c066d00ccaf822
+            );
+        
+    
+
+        function geo_json_28737336dec42efb471e0deb158cf26b_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_28737336dec42efb471e0deb158cf26b = L.geoJson(null, {
+                onEachFeature: geo_json_28737336dec42efb471e0deb158cf26b_onEachFeature,
+            
+            ...{
+}
+        });
+
+        function geo_json_28737336dec42efb471e0deb158cf26b_add (data) {
+            geo_json_28737336dec42efb471e0deb158cf26b
+                .addData(data);
+        }
+            geo_json_28737336dec42efb471e0deb158cf26b_add({"crs": {"properties": {"name": "urn:ogc:def:crs:EPSG::4258"}, "type": "name"}, "features": [{"geometry": {"coordinates": [-2.939725084999964, 35.29499466800007], "type": "Point"}, "properties": {"Direccion": "PZA .MARIA ASTIGARRAGA S/N (B.ATAQUE SECO)", "EMAIL": "ceip.espana@educacion.gob.es", "ID": "M03", "LE1": "101", "LE2": "230 260", "LE3": "550 551", "LE4": null, "LE5": "", "NOMBRE": "CEIP ESPA\u00d1A", "Telefono": 952683994.0}, "type": "Feature"}, {"geometry": {"coordinates": [-2.954746653999962, 35.29595507700003], "type": "Point"}, "properties": {"Direccion": "CTRA.DE HIDUM S/N", "EMAIL": "leonsola@gmail.com", "ID": "M05", "LE1": "105", "LE2": "213 230 233 261 ", "LE3": "305", "LE4": "401", "LE5": "550 580", "NOMBRE": "CEIP LE\u00d3N SOL\u00c1 ", "Telefono": 952683903.0}, "type": "Feature"}, {"geometry": {"coordinates": [-2.949008093999964, 35.27254115900007], "type": "Point"}, "properties": {"Direccion": "CTRA. DE HARDU, N\u00ba 5", "EMAIL": "ceip.pde@educacion.gob.es", "ID": "M14", "LE1": "230 231 232 233", "LE2": "580", "LE3": null, "LE4": null, "LE5": "", "NOMBRE": "CEIP PEDRO DE ESTOPI\u00d1\u00c1N", "Telefono": 952674919.0}, "type": "Feature"}, {"geometry": {"coordinates": [-2.948596427999973, 35.278665542000056], "type": "Point"}, "properties": {"Direccion": "CALLE ESCULTOR MUSTAF\u00c1 ARRUF, 8", "EMAIL": "correo@colegioenriquesoler.com", "ID": "M18", "LE1": "230", "LE2": "308", "LE3": "580", "LE4": null, "LE5": "", "NOMBRE": "CC ENRIQUE SOLER", "Telefono": 952670287.0}, "type": "Feature"}, {"geometry": {"coordinates": [-2.951351473999978, 35.28611637500006], "type": "Point"}, "properties": {"Direccion": "AV.DE LA JUVENTUD, 4", "EMAIL": "ies.enriquenieto@educacion.gob.es", "ID": "M07", "LE1": "101", "LE2": "204 230 260", "LE3": "301 305", "LE4": "409 410", "LE5": "501 551 580", "NOMBRE": "IES ENRIQUE NIETO", "Telefono": 630683268.0}, "type": "Feature"}, {"geometry": {"coordinates": [-2.939051766999967, 35.27767991700006], "type": "Point"}, "properties": {"Direccion": "GRAL. ASTILLEROS, S/N", "EMAIL": "ies.miguelfernandez@educacion.gob.es", "ID": "M12", "LE1": "208 230 260", "LE2": "301 305", "LE3": "409", "LE4": "550", "LE5": "", "NOMBRE": "IES MIGUEL FERN\u00c1NDEZ", "Telefono": 952672517.0}, "type": "Feature"}, {"geometry": {"coordinates": [-2.945733968999946, 35.28951598800006], "type": "Point"}, "properties": {"Direccion": "PZA.DE PRIMERO DE MAYO 2", "EMAIL": "instituto@iesleopoldoqueipo.com", "ID": "M04", "LE1": "202 206 230 233 260", "LE2": "410", "LE3": "580", "LE4": "", "LE5": "", "NOMBRE": "IES LEOPOLDO QUEIPO ", "Telefono": 952673810.0}, "type": "Feature"}, {"geometry": {"coordinates": [-2.952538354999945, 35.286381145000064], "type": "Point"}, "properties": {"Direccion": "CTRA. ALFONSO XIII S/N, -PRIM. ABRIL", "EMAIL": "ceip.pintormorillas@educacion.gob.es", "ID": "M10", "LE1": "101", "LE2": "230 260", "LE3": "402", "LE4": "502", "LE5": "", "NOMBRE": "CEIP PINTOR EDUARDO MORILLAS", "Telefono": 952675934.0}, "type": "Feature"}, {"geometry": {"coordinates": [-2.952132651999932, 35.285553434000064], "type": "Point"}, "properties": {"Direccion": "CTRA. ALFONSO XIII, S/N", "EMAIL": "ceip.anselmopardo@educacion.gob.es", "ID": "M13", "LE1": "208 230", "LE2": "407", "LE3": "550 551", "LE4": "", "LE5": "", "NOMBRE": "CEIP ANSELMO PARDO ", "Telefono": 695917502.0}, "type": "Feature"}, {"geometry": {"coordinates": [-2.941471192999927, 35.285520279000025], "type": "Point"}, "properties": {"Direccion": "COMANDANTE GARC\u00cdA MORATO, 2", "EMAIL": "ceip.reyescatolicos@educacion.gob.es", "ID": "M09", "LE1": "205 208 230", "LE2": "305", "LE3": "551 580", "LE4": "551 580", "LE5": "", "NOMBRE": "CEIP REYES CAT\u00d3LICOS ", "Telefono": 952674299.0}, "type": "Feature"}, {"geometry": {"coordinates": [-2.944245020999972, 35.28817065700008], "type": "Point"}, "properties": {"Direccion": "M\u00daSICO GRANADOS 2", "EMAIL": "ceip.velazquez@educacion.gob.es", "ID": "M06", "LE1": "103", "LE2": "230", "LE3": "501", "LE4": null, "LE5": "", "NOMBRE": "CEIP VEL\u00c1ZQUEZ ", "Telefono": 952674502.0}, "type": "Feature"}, {"geometry": {"coordinates": [-2.94304694799996, 35.275703917000044], "type": "Point"}, "properties": {"Direccion": "CORONEL CEBOLLINO, N\u00ba 8", "EMAIL": "ceip.real@educacion.gob.es", "ID": "M08", "LE1": "102", "LE2": "203 209 230 260", "LE3": "305", "LE4": "550 551", "LE5": "", "NOMBRE": "CEIP REAL", "Telefono": 647512334.0}, "type": "Feature"}, {"geometry": {"coordinates": [-2.951775288999954, 35.29688994800006], "type": "Point"}, "properties": {"Direccion": "C/ PEDRO DE MENDOZA, N\u00ba 27", "EMAIL": "sergio.balbuena@edumelilla.es", "ID": "M11", "LE1": "102", "LE2": "208 230 233", "LE3": "301", "LE4": "402 409", "LE5": "550 551 580", "NOMBRE": "CEIP JUAN CARO ROMERO", "Telefono": 952684169.0}, "type": "Feature"}, {"geometry": {"coordinates": [-2.947969328999932, 35.293528483000046], "type": "Point"}, "properties": {"Direccion": "CALLE GENERAL CASTA\u00d1OS", "EMAIL": "ceip.encarnaleon@educacion.gob.es", "ID": "M01", "LE1": "102", "LE2": "230 233 260", "LE3": "305 306", "LE4": "402", "LE5": "501 550 551", "NOMBRE": "CEIP ENCARNA LE\u00d3N", "Telefono": 951485290.0}, "type": "Feature"}, {"geometry": {"coordinates": [-2.956166140999926, 35.28728134600004], "type": "Point"}, "properties": {"Direccion": "C/MAAN\u00c1N BENAISA MIMUN", "EMAIL": "ies.virgenvictoria@educacion.gob.es", "ID": "M02", "LE1": "101 102", "LE2": "203 230 260", "LE3": "402", "LE4": "501 502 550 551 ", "LE5": "", "NOMBRE": "IES VIRGEN DE LA VICTORIA", "Telefono": 952670647.0}, "type": "Feature"}, {"geometry": {"coordinates": [-2.947370898999964, 35.29809723300008], "type": "Point"}, "properties": {"Direccion": "GARC\u00cdA CABRELLES, S/N", "EMAIL": "ceip.mediterraneo@educacion.gob.es", "ID": "M15", "LE1": "209 230", "LE2": "580", "LE3": null, "LE4": null, "LE5": "", "NOMBRE": "CEIP MEDITERR\u00c1NEO", "Telefono": 952682245.0}, "type": "Feature"}, {"geometry": {"coordinates": [-2.94717610899994, 35.279272013000025], "type": "Point"}, "properties": {"Direccion": "C/ ESCULTOR MUSTAF\u00c1 ARRUF, 6 (HUERTA SALAMA)", "EMAIL": "ies.jafernandez@educacion.gob.es", "ID": "M16", "LE1": "101 102", "LE2": "203 230 260", "LE3": "301 305 307", "LE4": "502 551", "LE5": "", "NOMBRE": "IES JUAN ANTONIO FERN\u00c1NDEZ P\u00c9REZ", "Telefono": 952679216.0}, "type": "Feature"}, {"geometry": {"coordinates": [-2.935730512999953, 35.27719403100008], "type": "Point"}, "properties": {"Direccion": "C/ CABO CA\u00d1\u00d3N ANTONIO MESA, S/N.", "EMAIL": "ceip.hipodromo@educacion.gob.es", "ID": "M17", "LE1": "103", "LE2": "230 232 260", "LE3": "301", "LE4": "402a", "LE5": "550", "NOMBRE": "CEIP HIP\u00d3DROMO", "Telefono": 615917231.0}, "type": "Feature"}], "name": "colesMelillaLatLongPto", "type": "FeatureCollection"});
+        geo_json_28737336dec42efb471e0deb158cf26b.setStyle(function(feature) {return feature.properties.style;});
+
+        
+    
+    geo_json_28737336dec42efb471e0deb158cf26b.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature => {
+        if (feature === null) {
+            return '';
+        } else if (typeof(feature)=='object') {
+            return JSON.stringify(feature);
+        } else {
+            return feature;
+        }
+    }
+    let fields = ["NOMBRE"];
+    let aliases = ["Centro:"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i].toLocaleString()}</th>
+            
+            <td>${handleObject(layer.feature.properties[v]).toLocaleString()}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{
+  "maxWidth": 800,
+  "sticky": false,
+  "className": "foliumtooltip",
+});
+                     
+    
+    geo_json_28737336dec42efb471e0deb158cf26b.bindPopup(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature => {
+        if (feature === null) {
+            return '';
+        } else if (typeof(feature)=='object') {
+            return JSON.stringify(feature);
+        } else {
+            return feature;
+        }
+    }
+    let fields = ["NOMBRE", "Direccion", "Telefono", "EMAIL", "LE1", "LE2", "LE3", "LE4", "LE5"];
+    let aliases = ["Nombre:", "Direcci\u00f3n:", "Tel\u00e9fono", "Correo:", "Actividades Palanca:", "", "", "", ""];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i].toLocaleString()}</th>
+            
+            <td>${handleObject(layer.feature.properties[v]).toLocaleString()}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{
+  "className": "foliumpopup",
+});
+                     
+    
+            geo_json_28737336dec42efb471e0deb158cf26b.addTo(feature_group_sub_group_a1d1bc9b66449e9857194ce4ed14c1c8);
+        
+    
+            feature_group_sub_group_a1d1bc9b66449e9857194ce4ed14c1c8.addTo(map_13cc323048da8365844a1a1b255aa31f);
+        
+    
+            var geo_json_28737336dec42efb471e0deb158cf26bsearchControl = new L.Control.Search({
+                layer: geo_json_28737336dec42efb471e0deb158cf26b,
+                
+                propertyName: 'NOMBRE',
+                
+                collapsed: true,
+                textPlaceholder: 'Buscar por nombre del centro',
+                position:'topleft',
+            
+                initial: false,
+                
+                zoom: 20,
+                
+                hideMarkerOnCollapse: true
+            
+                });
+                geo_json_28737336dec42efb471e0deb158cf26bsearchControl.on('search:locationfound', function(e) {
+                    geo_json_28737336dec42efb471e0deb158cf26b.setStyle(function(feature){
+                        return feature.properties.style
+                    })
+                    
+                    e.layer.setStyle({
+  "weight": 3,
+});
+                    
+                    if(e.layer._popup)
+                        e.layer.openPopup();
+                })
+                geo_json_28737336dec42efb471e0deb158cf26bsearchControl.on('search:collapsed', function(e) {
+                        geo_json_28737336dec42efb471e0deb158cf26b.setStyle(function(feature){
+                            return feature.properties.style
+                    });
+                });
+            map_13cc323048da8365844a1a1b255aa31f.addControl( geo_json_28737336dec42efb471e0deb158cf26bsearchControl );
+
+        
+    
+            var mouse_position_e37473b7f8b8eef342e239abbf094383 = new L.Control.MousePosition(
+                {
+  "position": "bottomright",
+  "separator": " : ",
+  "emptyString": "Unavailable",
+  "lngFirst": false,
+  "numDigits": 5,
+  "prefix": "",
+}
+            );
+            mouse_position_e37473b7f8b8eef342e239abbf094383.options["latFormatter"] =
+                undefined;
+            mouse_position_e37473b7f8b8eef342e239abbf094383.options["lngFormatter"] =
+                undefined;
+            map_13cc323048da8365844a1a1b255aa31f.addControl(mouse_position_e37473b7f8b8eef342e239abbf094383);
+        
+    
+            var tile_layer_3c05b8aeec376f1f0270f7a2cbe1e9a9 = L.tileLayer(
+                "http://mt0.google.com/vt/lyrs=s\u0026hl=en\u0026x={x}\u0026y={y}\u0026z={z}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": " ",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            var layer_control_d9db6aeaa9d7ce4cff3c32046b027e84_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_f5de8eb2be6a49800a3d4ab598cbf21a,
+                    "Sat\u00e9lite" : tile_layer_3c05b8aeec376f1f0270f7a2cbe1e9a9,
+                },
+                overlays :  {
+                    "Centros educativos" : feature_group_sub_group_a1d1bc9b66449e9857194ce4ed14c1c8,
+                },
+            };
+            let layer_control_d9db6aeaa9d7ce4cff3c32046b027e84 = L.control.layers(
+                layer_control_d9db6aeaa9d7ce4cff3c32046b027e84_layers.base_layers,
+                layer_control_d9db6aeaa9d7ce4cff3c32046b027e84_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_13cc323048da8365844a1a1b255aa31f);
+
+        
+</script>
+</html>
